@@ -1,0 +1,21 @@
+version: '3'
+services:
+  master:
+    image: 'bitnami/spark:latest'
+    ports:
+      - '7077:7077'
+      - '8082:8082'
+    environment:
+      - SPARK_MODE=master
+    volumes:
+      - ".:/test-files:rw"
+  worker1:
+    image: 'bitnami/spark:latest'
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://master:7077
+  worker2:
+    image: 'bitnami/spark:latest'
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://master:7077
