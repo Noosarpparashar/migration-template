@@ -1,6 +1,3 @@
-Here's an updated version of the README file with proper formatting and detailed steps:
-
-# Project Name - Readme
 
 ## Introduction
 
